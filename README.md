@@ -4,8 +4,17 @@ This repo helps you to get familiar with STREAMLIT, an open-source Python librar
 
 ## Install Streamlit
 
+- Install Streamlit via the command:
+
 ```python
 pip install streamlit
+```
+
+- Run Iris example via the command:
+
+```python
+cd iris/
+streamlit run main.py  
 ```
 
 ## References
