@@ -5,8 +5,6 @@ import altair as alt
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-
-
 def show_description(species):
     @st.cache(suppress_st_warning=True)
     def _read_descriptions(species: str) -> str:
@@ -41,13 +39,11 @@ def home_page():
     selected_sepecies = st.radio('Select species', ['Setosa', 'Versicolor', 'Virginica'])
     show_description(selected_sepecies)
 
-
 def dataset_page():
     st.title('Dataset')
     st.header('Statistics')
     stats_df = pd.concat([df.mean(), df.std()], axis=1, names=['mean', 'std']).rename(columns={0: 'mean', 1: 'std'})
     st.write(stats_df)
-
 
 def graphs_page():
     st.title('Graphs')
@@ -58,7 +54,6 @@ def graphs_page():
     st.pyplot(fig)
 
     st.header('*Can also support Altair, Plotly, and Bokeh')
-
 
 if __name__ == '__main__':
     df = sns.load_dataset('iris')
